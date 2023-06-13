@@ -313,6 +313,11 @@ def launch_demo(args):
                 cv_interface.reset_snapshot()
                 do_reset = True
 
+            if do_reset == True and clock_main > 5:
+                do_reset = False
+                cv_interface.put_text("Reset done")
+    
+                
             # Dans la ligne suivante, il faudra enlever le not, je l'ai ajouté pour faire l'inférence
             if key == "i" and current_data.is_data_recorded():
                 print("Begining Inference")
